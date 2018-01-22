@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+<h:outputStylesheet library="css" name="style.css" ></h:outputStylesheet>
+
+</h:head>
+<h:body>
+	<h:form>
+	
+		<h:panelGrid columns="3" border="0" cellpadding="3" cellspacing="3"></h:panelGrid>
+			<h:outputText value="Username"></h:outputText>
+			<h:inputText id="username" value="#{customer.username}" required="true" requiredMessage="Username is required" validatorMessage="Username is invalid">
+				<f:validateLength minimum="3" maximum="30" ></f:validateLength></h:inputText>
+			<h:message for="username" styleClass="error"></h:message>
+			
+			<br/>
+			<br/>
+			<h:outputText value="Password"></h:outputText>
+			<br/>
+			<h:inputSecret id="password" value="#{customer.password}" required="true" requiredMessage="Password is required"></h:inputSecret>
+			<h:message for="password" styleClass="error"></h:message>
+			
+			<h:outputText value=""></h:outputText> 
+			<br/>
+			<h:commandButton value="LOGIN" action="#{customer.checkuser(customer.getUsername(),customer.getPassword())}"> </h:commandButton>
+	</h:form>
+
+
+</h:body>
+</html>

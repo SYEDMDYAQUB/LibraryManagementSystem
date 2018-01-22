@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+<h:outputStylesheet library="css" name="style.css" ></h:outputStylesheet>
+
+</h:head>
+<h:body>
+	<h:form>
+	
+		<h:panelGrid columns="3" border="0" cellpadding="3" cellspacing="3"></h:panelGrid>
+			
+			<br/>
+			<br/>
+			<h:outputText value="name"></h:outputText>
+			<h:inputText id="name" value="#{book.name}" required="true" requiredMessage="name is required"></h:inputText>
+			<h:message for="username" styleClass="error"></h:message>
+			<br/>
+			<br/>
+			<h:outputText value="type"></h:outputText>
+			<h:inputText id="type" value="#{book.type}" required="true" requiredMessage="type is required"></h:inputText>
+			<h:message for="username" styleClass="error"></h:message>
+			<br/>
+			<h:outputText value="copies"></h:outputText>
+			<br/>
+			<h:inputSecret id="copies" value="#{book.copies}" required="true" requiredMessage="No of Copies is required"></h:inputSecret>
+			<h:message for="password" styleClass="error"></h:message>
+			
+			<h:outputText value=""></h:outputText> 
+			<br/>
+			<h:commandButton value="LOGIN" action="#{book.insert(book.getName(),book.getType(),book.getCopies())}"> </h:commandButton>
+	</h:form>
+
+
+</h:body>
+</html>

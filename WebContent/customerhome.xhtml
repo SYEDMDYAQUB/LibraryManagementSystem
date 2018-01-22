@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Welcome to Library Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	 <style>
+  
+  </style>
+</head>
+<body >
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <span class="navbar-brand">Welcome,#{customer.username}</span>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown active"><a class="dropdown-toggle active" data-toggle="dropdown" href="#/!"> <span
+					class="glyphicon glyphicon-search"></span>  Search Book <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#!searchbyname"><span
+					class="glyphicon glyphicon-search"></span>  Search By Name</a></li>
+          <li><a href="#!searchbyauthor"><span
+					class="glyphicon glyphicon-search"></span> Search By Author</a></li>
+          <li><a href="#!searchbyid"><span
+					class="glyphicon glyphicon-search"></span> Search By Id</a></li>
+        </ul>
+      </li>
+      <li><a href="#"><span
+					class="glyphicon glyphicon-search"></span> Search Unreturned Book</a></li>
+      <li><a href="#">Fine Paid</a></li>
+      <li><a href=""><span
+					class="glyphicon glyphicon-edit"></span> Change Password</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li ><a href="reset.xhtml"><span
+					class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="ng-view" ng-app="myApp">
+</div>
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/searchbyname", {
+        templateUrl : "searchbyname.xhtml"
+    })
+    .when("/searchbyauthor", {
+        templateUrl: "searchbyauthor.xhtml"
+    })
+    .when("/searchbyid", {
+        templateUrl: "searchbyid.xhtml"
+    })
+    .otherwise({
+        templateUrl: '/'
+    });
+});
+</script>
+
+  
+	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Account Information</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<p class="bg-sucess">
+		<table>
+			<tr>
+				<td>Welcome,</td>
+				<td>#{accountController.name}</td>
+			</tr>
+		</table>
+	</p>
+
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="bookissue.xhtml" target="bi">Book
+					Issue</a></li>
+			<li><a href="addbook.xhtml" target="bi">Add New Books</a></li>
+			<li><a href="delete.xhtml" target="bi">Delete Books</a></li>
+			<li><a href="customerregister.xhtml" target="bi">Return Book</a></li>
+			<li><a href="addemployee.xhtml" target="bi">Add Employee</a></li>
+			<li><a href="forgot.xhtml" target="bi">Change Password</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="main.xhtml"><span
+					class="glyphicon glyphicon-log-out"></span> LogOut </a></li>
+		</ul>
+	</div>
+	</nav>
+	<div class="container-fluid">
+		<iframe height="300px" width="100%" name="bi" style="border: none;"></iframe>
+	</div>
+</body>
+</html>

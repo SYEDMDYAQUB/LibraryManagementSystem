@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Employee Login</title>
+</h:head>
+<h:body>
+	<h1>WELCOME TO EMPLOYEE LOGIN</h1>
+	<h:form>
+		<h3>Please Enter Details</h3>
+		<h:panelGrid columns="3">
+			<h:outputFormat>
+				<h:outputLabel for="empId" >Employee Id:</h:outputLabel>
+				<h:inputText value="#{employee.empId}" id="empId" required="true" requiredMessage="Employee Id is compulsory"></h:inputText>
+				<br />
+				<br />
+
+				<h:outputLabel for="emppass">Employee Password:</h:outputLabel>
+				<h:inputText value="#{employee.emppass}" id="emppass"  required="true" requiredMessage="Employee Password is compulsory"></h:inputText>
+				<br />
+				<br />
+
+				<h:commandButton action="libstaffhome.xhtml" value="Login"></h:commandButton>
+			</h:outputFormat>
+		</h:panelGrid>
+	</h:form>
+
+</h:body>
+</html>
