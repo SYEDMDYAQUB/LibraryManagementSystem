@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+
+<h:head>
+	<title>Search Book</title>
+
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+	<!-- <h:outputStylesheet library="css" name="bookstyle.css" /> -->
+	<style>
+.bookTable {
+	border: 1px solid #000000;
+		margin: 5px
+	
+}
+
+.bookTableHeader {
+	text-align: center;
+	background: none repeat scroll 0 0 #B5B5B5;
+	border-bottom: 1px solid #000000;
+	padding: 2px;
+	margin: 5px
+}
+
+.bookTableOddRow {
+	text-align: center;
+	background: none repeat scroll 0 0 #FFFFFFF;
+		margin: 5px
+	
+}
+
+.bookTableEvenRow {
+	text-align: center;
+	background: none repeat scroll 0 0 #D3D3D3;
+		margin: 5px
+	
+}
+</style>
+</h:head>
+<h:body>
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">WebSiteName</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li><a href="#">Home</a></li>
+			<li><a href="AddBook.xhtml">AddBook</a></li>
+			<li><a href="RemoveBook.xhtml">RemoveBook</a></li>
+			<li class="active"><a href="SearchBook.xhtml">SearchBook</a></li>
+
+		</ul>
+
+	</div>
+	</nav>
+	<h:form>
+
+		<!-- 
+	<p>#{book.trail()} book is ready</p>
+	<p>#{libraryMainJSF.create()} factory is ready</p>
+	 -->
+
+
+
+
+		<h:outputLabel for="bookID">Book ID:</h:outputLabel>
+
+		<h:inputText id="bookidin" value="#{book.bookId}">Enter Book Name</h:inputText>
+		<br />
+		<h:outputLabel for="bookname">Book Name:</h:outputLabel>
+
+		<h:inputText id="booknamein" value="#{book.bookName}">Enter Book Name</h:inputText>
+		<br />
+		<h:outputLabel for="booktype">Book Type:</h:outputLabel>
+
+		<h:inputText id="booktypein" value="#{book.bookType}">Enter Book Name</h:inputText>
+
+
+		<br />
+
+		<h:commandButton
+			action="#{libraryMainJSF.searchBook(book.bookId,book.bookName,book.bookType)}"
+			value="Search"></h:commandButton>
+		<br />
+		<h:dataTable value="#{libraryMainJSF.getBooks()}" var="book1"
+			styleClass="bookTable" headerClass="bookTableHeader"
+			rowClasses="bookTableOddRow,bookTableEvenRow">
+			<h:column>
+				<f:facet name="header">ID</f:facet>    
+					#{book1.bookId}
+				</h:column>
+			<h:column>
+				<f:facet name="header">Name</f:facet>    
+					#{book1.bookName}
+				</h:column>
+			<h:column>
+				<f:facet name="header">Type</f:facet>    
+					#{book1.bookType}
+				</h:column>
+			<h:column>
+				<f:facet name="header">No Of Copies</f:facet>    
+					#{book1.noOfCopies}
+				</h:column>
+		</h:dataTable>
+
+		<!-- <h:inputText type="text" class="form-control" placeholder="Search" name="search"></h:input> -->
+
+
+	</h:form>
+
+</h:body>
+</html>
